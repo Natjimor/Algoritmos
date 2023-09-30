@@ -1,0 +1,39 @@
+section{
+    width: 15vw;
+    height: 42vh;
+    background-color: #e2e2e0df;
+    border-radius: 8px;
+    box-shadow: 2px 2px 13px 0px #ff1aa0c9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw;
+}
+h1{
+    font-family: 'Bree Serif', serif;
+}
+p{
+    font-family: 'Bree Serif', serif;
+}
+img{
+    width: 12vw;
+    height: 12vw;
+}
+#searchBar{
+    position: absolute;
+    top: 3%;
+}
+input{
+    width: 20vw ;
+    height: 3vh;
+    border-radius: 10px;
+}
+button{
+    width: 5vw ;
+    height: 3.8vh;
+    border-radius: 10px;
+    font-family: 'Bree Serif', serif;
+    background-color: #ff1aa0c2;
+    color: aliceblue;
+}

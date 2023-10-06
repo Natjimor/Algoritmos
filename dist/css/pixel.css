@@ -1,0 +1,13 @@
+.pixel{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #28155D;
+    border-radius: 2px;
+    margin: 1px;
+
+}
+.pixel:hover{
+    cursor: pointer;
+    background-color: #28155D;
+}

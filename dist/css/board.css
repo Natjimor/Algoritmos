@@ -1,10 +1,15 @@
 .boardContainer {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
 }
-
-board-container{
-    height: fit-content;
+h1{
+    font-family: 'Bree Serif', serif;
+    font-size:x-large;
+}
+div{
+    width: 45vw;
 }

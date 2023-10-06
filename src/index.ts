@@ -22,7 +22,7 @@ class AppContainer extends HTMLElement {
 
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/appContainer.css")
+            link.setAttribute("href", "./css/container.css")
 
             const mainContainer = this.ownerDocument.createElement("section")
             mainContainer.classList.add("boardContainer")

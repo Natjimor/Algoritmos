@@ -11,12 +11,12 @@ export const radialFunction = (selected: string) => {
                 pixel.setAttribute("color", "28155D")
             }
 
-            if (parseInt(selected) === i-15 ||
+            if (parseInt(selected) === i-16 ||
+                parseInt(selected) === i+16 ||
+                parseInt(selected) === i-15 ||
                 parseInt(selected) === i+15 ||
                 parseInt(selected) === i-14 ||
                 parseInt(selected) === i+14 ||
-                parseInt(selected) === i-16 ||
-                parseInt(selected) === i+16 ||
                 parseInt(selected) === i-1 ||
                 parseInt(selected) === i+1
                 )

@@ -26,7 +26,7 @@ class Dashboard extends HTMLElement {
 			card.setAttribute(episode_props.name, e.name)
 			card.setAttribute(episode_props.air_date, e.air_date)
 			card.setAttribute(episode_props.episode, e.episode)
-			card.setAttribute(episode_props.character, e.character)
+			card.setAttribute(episode_props.characters, e.characters)
 			this.shadowRoot?.appendChild(card);
 			})
 			characterData.forEach((e:characterType) => {

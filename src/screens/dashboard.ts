@@ -1,9 +1,7 @@
 import styles from './styles.css';
-import {episodeType} from "../types/episode"
-import {characterType} from "../types/character"
-import {EpisodeData , CharacterData} from "../services/getData"
+import {EpisodeData, CharacterData } from "../services/getData"
 import {episode_props} from "../components/card/card"
-import {character_props} from "../components/card/character"
+import {character_props} from "../components/character/character"
 
 class Dashboard extends HTMLElement {
 	constructor() {
@@ -13,27 +11,28 @@ class Dashboard extends HTMLElement {
 
 	async connectedCallback() {
 		const episodeData = await EpisodeData ();
-		const characterData = await CharacterData();
-
-		this.render(episodeData, characterData);
+		this.render(episodeData.results);
 	}
 
-	render(episodeData?: any , characterData?:any) {
+	render(episodeData?: any ) {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
-			episodeData.forEach((e:episodeType) => {
-			const card = this.ownerDocument.createElement('app-card');
-			card.setAttribute(episode_props.name, e.name)
-			card.setAttribute(episode_props.air_date, e.air_date)
-			card.setAttribute(episode_props.episode, e.episode)
-			card.setAttribute(episode_props.characters, e.characters)
-			this.shadowRoot?.appendChild(card);
+			episodeData.forEach((e:any) => {
+			const div = this.ownerDocument.createElement("div");
+			const episode = this.ownerDocument.createElement('app-card');
+			episode.setAttribute(episode_props.name, e.name)
+			episode.setAttribute(episode_props.air_date, e.air_date)
+			episode.setAttribute(episode_props.episode, e.episode)
+			div.appendChild(episode);
+
+				e.characters.forEach(async(characters:string) => {
+				const characterData = await CharacterData (characters)
+				const character = this.ownerDocument.createElement('app-character');
+				character.setAttribute(character_props.name, characterData.name)
+				character.setAttribute(character_props.image, characterData.image)
+				div.appendChild(character);
 			})
-			characterData.forEach((e:characterType) => {
-			const character = this.ownerDocument.createElement('app-character');
-			character.setAttribute(character_props.name, e.name)
-			character.setAttribute(character_props.image, e.image)
-			this.shadowRoot?.appendChild(character);
+			this.shadowRoot?.appendChild(div);
 			})
 		}
 			

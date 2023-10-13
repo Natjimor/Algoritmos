@@ -1,22 +1,18 @@
-import { episodeType } from '../types/episode';
-import { characterType} from '../types/character';
-import {episode_props} from "../components/card/card"
-
 export const EpisodeData = async () => {
   try {
     const Episode = await fetch ('https://rickandmortyapi.com/api/episode').then(res=>res.json())
     console.log(Episode) 
-    return Episode.results
+    return Episode
     
   } catch (error) {
     console.log(error)
   }
 }
-export const CharacterData = async () => {
+export const CharacterData = async (src: string) => {
   try {
-    const character = await fetch(episode_props.character).then (res=>res.json())
+    const character = await fetch(`${src}`).then (res=>res.json())
     console.log(character)
-    return character.results
+    return character
   } catch (error) {
     console.log(error)
   }

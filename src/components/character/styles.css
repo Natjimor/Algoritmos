@@ -1,0 +1,15 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+h3{
+    font-family: 'Bree Serif', serif;
+    color:#e2e2e0df;
+}
+img{
+    width: 12vw;
+    height: 12vw;
+}

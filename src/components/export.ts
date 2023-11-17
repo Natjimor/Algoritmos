@@ -1,0 +1,1 @@
+export {default as Messagge } from "../components/user_interaction/message"
